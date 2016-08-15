@@ -1,0 +1,27 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <parties-form style="float: left"></parties-form>
+            <login-buttons style="float: right"></login-buttons>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="search clearfix">
+                <input class="form-control" type="text" #searchtext placeholder="Search by Location" style="max-width: 400px;float:left;">
+                <button (click)="search(searchtext.value)" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                </button>
+            </div>
+            <div class="list-group">
+                <a [routerLink]="['/party', party._id]" class="list-group-item" *ngFor="let party of parties">
+                    <h4 class="list-group-item-heading">{{party.name}}</h4>
+                    <p class="list-group-item-text">{{party.description}}</p>
+                    <p>{{party.location}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form *ngIf="party" (submit)="saveParty()">
+            <label>Name</label>
+            <input class="form-control" type="text" [(ngModel)]="party.name" name="name">
+
+            <label>Description</label>
+            <input class="form-control" type="text" [(ngModel)]="party.description" name="description">
+
+            <label>Location</label>
+            <input class="form-control" type="text" [(ngModel)]="party.location" name="location">
+            <br>
+            <!--<button type="submit">Save</button>-->
+            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                Save
+            </button>
+
+            <!--<a [routerLink]="['/']">Cancel</a>-->
+            <button (click)="navigateBack()" type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                Cancel
+            </button>
+
+            <button (click)="removeParty(party)" type="button" class="btn btn-default pull-right" aria-label="Left Align">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                Delete
+            </button>
+        </form>
+    </div>
+</div>
+<!--<button (click)="navigateBack()">Back to the party list</button>-->

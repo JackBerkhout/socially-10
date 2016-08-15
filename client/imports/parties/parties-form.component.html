@@ -1,0 +1,21 @@
+        <div *ngIf="!user">Please, log in to change party</div>
+        <form [formGroup]="addForm" (ngSubmit)="addParty()">
+            <label>Name</label>
+            <input class="form-control" type="text" formControlName="name">
+
+            <label>Description</label>
+            <input class="form-control" type="text" formControlName="description">
+
+            <label>Location</label>
+            <input class="form-control" type="text" formControlName="location">
+
+            <label>Public</label>
+            <input type="checkbox" formControlName="public">
+
+            <br>
+            <!--<button type="submit">Add</button>-->
+            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                Add
+            </button>
+        </form>
